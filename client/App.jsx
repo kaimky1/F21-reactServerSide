@@ -1,5 +1,5 @@
 import React from "react";
-export const App = ({ questions, answers }) => (
+export const App = ({ questions, answers, handleModifyAnswerVotes }) => (
   <div>
     <h1>Q&A Tool</h1>
 
@@ -14,6 +14,10 @@ export const App = ({ questions, answers }) => (
                 <span>
                   {content} - {upvotes}
                 </span>
+
+                <button onClick={() => handleModifyAnswerVotes(answerId, 1)}>+</button>
+                <button onClick={() => handleModifyAnswerVotes(answerId, -1)}>-</button>
+                
               </div>
             ))}
         </div>
